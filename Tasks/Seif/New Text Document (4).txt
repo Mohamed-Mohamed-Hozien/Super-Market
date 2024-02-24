@@ -1,0 +1,34 @@
+import csv
+products = []
+
+with open('file.csv', 'r') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        products.append(row)
+    csvfile.close()
+    name = input("Enter a product name: ")
+for p in products:
+    if name != p[0]:
+        pass
+    else:
+        print("Product already exists. Please enter a different product name.")
+        break
+
+price = float(input(" Enter Price: "))
+Path = input("")
+
+while True:
+    try:
+        quantity = int(input("Enter a quantity: "))
+        products.append([name, quantity, price, Path])
+        break
+    except ValueError:
+        print("Invalid input. Please enter an integer.")
+
+
+with open('file.csv', 'a', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    for product in products:
+        writer.writerow(product)
+
+print("Data written to CSV file successfully.")

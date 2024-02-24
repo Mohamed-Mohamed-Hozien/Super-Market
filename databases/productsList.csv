@@ -1,0 +1,5 @@
+Name,Quantity,Price,path
+Milk,10,14,./media/milk.png
+Oil,3,15,./media/oil.jpg
+Cheese,17,20,./media/cheese.jfif
+Water,90,3.5,./media/water.jpg
